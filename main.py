@@ -314,3 +314,150 @@
 #
 # takeList(nums)
 #
+
+##################################
+
+####### Error handling #########
+#
+# def checkType(year):
+#     assert type(year) == int, 'Enter an integer value'
+#     print('The year type is valid')
+#     print('Successful')
+#     return True
+#
+# checkType(2010)
+#
+# ##### throws error ######
+#
+# # checkType(2010.1)
+#
+# ###########################
+#
+# ########### Reading and Writing Files ###############
+#
+# data = []
+#
+# fileObj = open('testFile.txt')
+# for d in fileObj:
+#     data.append(d)
+#
+# print(data)
+#
+# data = []
+#
+# fileObj = open('testFile.txt')
+# for d in fileObj:
+#     r = d.strip('\n')
+#     data.append(r)
+#
+# print(data)
+#
+# write_data = ['alpha','beta','gamma']
+#
+# with open('GreekLetters.txt', 'w') as fo:
+#     for value in write_data:
+#         fo.write(value)
+#         fo.write('\n')
+# fo.close()
+#
+# append_data = ['zeta','eta','theta']
+#
+# with open('GreekLetters.txt','a') as fo:
+#
+#     for value in append_data:
+#         fo.write(value)
+#         fo.write('\n')
+#
+# fo.close()
+#
+# #########################################
+#
+#
+# ##### CSV File #############
+#
+# observations = []
+# count = 0
+#
+# with open('temperature.CSV','r') as fo:
+#     header = fo.__next__()
+#     for i in fo:
+#         observations.append(i.strip('\n'))
+#         count += 1
+#
+# print(count)
+# # print(observations)
+#
+# ##################################
+#
+# ############ Classes #############
+#
+# class Fruit:
+#
+#     ''' class defined for fruits, to make their objects '''
+#
+#     def __init__(self, name, nutrients):
+#         try:
+#             assert type(nutrients) == list
+#         except AssertionError:
+#             print('Invalid Construction')
+#             raise Exception
+#         self.name = name
+#         self.nutrients = nutrients
+#         self.isRipe = False
+#
+#     def getName(self):
+#         return self.name
+#
+#     def getNutrients(self):
+#         for value in self.nutrients:
+#             print(value)
+#
+#     def checkRipeness(self):
+#         return self.isRipe
+#
+#     def makeRipen(self):
+#         self.isRipe = True
+#
+#
+#
+# apple = Fruit(name = 'Apple', nutrients=['Vit A', 'Vit B', 'Vit C', 'Vit D'])
+# banana = Fruit(name = 'Banana', nutrients=['Vit A', 'Vit B', 'Vit C'])
+#
+# print(banana.getName())
+# banana.getNutrients()
+# print(banana.checkRipeness())
+# banana.makeRipen()
+# print(banana.checkRipeness())
+# print(apple.getName())
+# apple.getNutrients()
+# print(apple.checkRipeness())
+# apple.makeRipen()
+# print(apple.checkRipeness())
+#
+# ############################
+#
+# ######### Inheritence #############
+#
+# class Citrus(Fruit):
+#     def __init__(self, name, nutrients):
+#         super().__init__(name, nutrients)
+#         self.type = 'Citrus'
+#         self.characteristic = 'pulpy and juicy'
+#
+#     def getType(self):
+#         return self.type
+#
+# orange = Citrus(name = 'Orange', nutrients = ['Vit C'])
+#
+# print(orange.getType())
+#
+# print(orange.name)
+#
+# print(orange.checkRipeness())
+#
+# orange.makeRipen()
+#
+# print(orange.checkRipeness())
+#
+# print(orange.characteristic)
+#
